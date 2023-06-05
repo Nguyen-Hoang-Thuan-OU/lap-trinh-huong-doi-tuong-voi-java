@@ -1,0 +1,5 @@
+Viết chương trình cho phép người dùng nhập vào 2 toán hạng (số) a và b sau đó nhập vào toán tử (phép toán) là 1 trong các phép toán cộng/trừ/nhân/chia/chia dư/chia nguyên/lũy thừa/logarith (ứng với a+b/a-b/axb/a/b/ a chia b lấy phần dư / a chia b lấy phần nguyên / ab / logab. 
+
+Chương trình sẽ in ra kết quả tương ứng trên màn hình.
+
+Lưu ý: Chương trình thể hiện 1 menu lựa chọn các phép toán và cho phép thực hiện nhiều lần cho đến khi người dùng muốn kết thúc.

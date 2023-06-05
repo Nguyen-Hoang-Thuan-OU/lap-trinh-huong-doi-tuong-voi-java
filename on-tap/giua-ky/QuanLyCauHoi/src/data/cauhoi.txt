@@ -1,0 +1,19 @@
+I ... a student.
+am
+is
+are
+was
+0
+I am ... engineer.
+a
+an
+the
+...
+1
+TEST
+TEST1
+TEST2
+TEST3
+TEST4
+2
+

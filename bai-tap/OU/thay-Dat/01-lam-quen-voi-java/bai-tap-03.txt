@@ -1,0 +1,24 @@
+Đính kèm là tập tin sinh viên có khỏang gần 4000 em
+
+Thông tin 1 sv sẽ nằm trên 1 dòng
+
+Mã số SV, Họ và tên lót, Tên, Ngày sinh, Ngành học, Quê quán
+
+Ví dụ
+
+11020555,Le Thanh,Cong,17-9-2000,Quan tri cong nghe truyen thong,Binh Phuoc
+
+Viết Chương trình cho phép chọn lựa 1 trong các menu sau:
+
+1- Nhập ngày D và tháng M: sau đó mở tập tin để đọc và chỉ in ra màn hình họ tên, ngày sinh các sinh viên sinh vào ngày D tháng M (để phòng công tác SV gửi mail chúc mừng!!).
+
+2- Nhập chuỗi S (ví dụ S="Th") sau đó mở tập tin để đọc và in ra màn hình họ tên, ngày sinh, ngành học, quê quán của tất cả sinh viên có tên bắt đầu là S (ví dụ Thanh, Thuyên, Thuận, Thiên,...)
+
+3- Kết thúc chương trình
+
+Lưu ý: Các bạn chỉ nộp (attach) tập tin .java  (đừng nén và gửi vì LMS không cho phép)
+
+Như vậy anh chị cần sử dụng lớp Scanner và String 
+
+Sẽ nhận 10 bài đầu tiên.
+
