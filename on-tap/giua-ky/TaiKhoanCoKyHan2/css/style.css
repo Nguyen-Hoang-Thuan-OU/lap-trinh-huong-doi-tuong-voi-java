@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	font-family:Tahoma, Geneva, sans-serif;
+	box-sizing:border-box;
+}
+
+html, body {
+	margin:0;
+	padding:0;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+header {
+	background: linear-gradient(#06F, #FFF, #006);
+	padding: 5px;
+}
+
+div.head {
+	display:flex;
+}
+
+div.head nav {
+	margin-left: auto;
+}
+
+nav ul {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+	display:flex;
+}
+
+a {
+	text-decoration:none;
+	color: yellow;
+}
+
+nav ul > li > a{
+	
+	display:block;
+	padding: 15px 10px;
+}
+
+header h1 {
+	text-align: center;
+	color: #FFF;
+	text-shadow: 2px 3px 3px #CCCCCC;
+	
+}
+
+/* CSS ADS */
+section.ads {
+	width: 60%;
+	display: flex;
+	margin:0 auto;
+	text-align:center;
+	margin-top:10px;
+}
+
+section.ads > div {
+	width: 25%;
+	background-color:rgba(0, 0, 255, 0.4);
+	padding-bottom: 100px;
+	padding-top: 5px;
+	border: 1px dashed #000033;
+	margin-right: 5px;
+}
+
+/* CSS CONTENT */
+section.content {
+	width: 80%;
+	background-color:#003;
+	margin: 0 auto;
+	color:#FFF;
+	display:flex;
+	margin-top:10px;
+}
+
+section.content ul {
+	list-style-image:url(../images/bullet2.png);
+	list-style-position:inside;
+	padding:0;
+}
+
+section.content ul > li {
+	background-color:#F00;
+	margin-top:2px;
+	padding: 10px;
+}
+
+section.category {
+	width:30%;
+	padding: 15px;
+}
+
+section.content h2 {
+	text-align:center;
+}
+
+section.news {
+	width: 70%;
+	padding:15px;
+}
+
+div.subject {
+	border-bottom: 2px solid #F00;
+}
+
+div.subject span {
+	background-color:#F00;
+	display:block;
+	width:30%;
+	padding: 15px;
+	border-radius:20px 20px 0 0;
+}
+
+/* CSS POST */
+div.post {
+	display: flex;
+	padding-top: 10px;
+}
+div.post > div.img {
+	width:30%;
+	overflow:hidden;
+}
+
+div.post > div.para {
+	width: 70%;
+	padding: 15px;
+}
+
+div.post > div.img img {
+	max-width: 100%;
+	transition:transform .5s;
+}
+
+div.post > div.img img:hover {
+	transform: scale(1.2);
+}
+
+div.post h4 {
+	margin: 0;
+}
+
+.tag {
+	background-color:#09F;
+	border-radius: 10px;
+	padding: 2px 15px;
+	display: inline-block;
+}
+
+
+

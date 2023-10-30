@@ -1,0 +1,15 @@
+
+Viết chương trình Java thực hiện  nhiệm vụ sau:
+
+- Cho phép NSD nhập vị trí, đường dẫn, tên tập tin văn bản (text) từ bàn phím.
+
+- Chương trình sẽ mở tập tin, đọc nội dung và in ra màn hình.
+
+- Sau đó NSD nhập vào từ bàn phím 2 chuỗi S và R.
+
+- Chương trình sau đó sẽ thay thế tất cả chuỗi S bằng chuỗi R (in ra màn hình để kiểm tra).
+
+- Sau đó nếu NSD đồng ý thì sẽ lưu kết quả nảy (sau khi thay thế) thành 1 tập tin khác trên dĩa.
+
+Sẽ nhận 10 bài đầu tiên!!1
+

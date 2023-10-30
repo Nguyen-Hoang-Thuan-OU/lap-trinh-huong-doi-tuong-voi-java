@@ -1,0 +1,425 @@
+public class Ngay {
+
+	protected int ngay;
+
+	protected int thang;
+
+	protected int nam;
+
+	public boolean ktNgay(int ngay, int thang, int nam){
+
+		if(thang == 1 || thang == 3|| thang == 5|| thang == 7|| thang == 8|| thang == 10|| thang == 12)
+
+			if(ngay <= 31)
+
+				return true;
+
+		if(thang == 4|| thang == 6|| thang == 9|| thang == 11)
+
+			if(ngay<=30)
+
+				return true;
+
+		if(thang == 2)
+
+			if(nam % 4 == 0 ||(nam % 100 == 0 && nam % 400 != 0))
+
+			{
+
+				if(ngay <= 29)
+
+					return true;
+
+			}
+
+			else
+
+			{
+
+				if (ngay <= 28)
+
+					return true;
+
+			}
+
+		return false;
+
+	}
+
+	public Ngay(int ngay, int thang, int nam){
+
+		if (ktNgay(ngay, thang, nam) == true){
+
+			this.ngay = ngay;
+
+			this.thang = thang;
+
+			this.nam = nam;
+
+		}
+
+		else
+
+		{
+
+			this.ngay = 1;
+
+			this.thang = 1;
+
+			this.nam = 2000;
+
+		}
+
+	}
+
+	public int soSanh(Ngay d2)
+
+	{
+
+		if(this.ngay == d2.ngay && this.thang == d2.thang && this.nam == d2.nam)
+
+			return 0;
+
+		if(this.nam > d2.nam)
+
+			return -1;
+
+		else{
+
+			if(this.nam == d2.nam)
+
+			{
+
+				if(this.thang > d2.thang)
+
+					return -1;
+
+				else
+
+				{
+
+					if(this.thang == d2.thang)
+
+						if(this.ngay > d2.ngay)
+
+							return -1;
+
+						else
+
+							return 1;
+
+				}
+
+			}
+
+		}
+
+		return 1;
+
+	}
+
+}
+
+
+
+
+
+public class DangNgay extends Ngay{
+
+	private char dauCach;
+
+	private String dinhDang;
+
+	public DangNgay(int ngay, int thang, int nam,char dauCach, String dinhDang){
+
+		super(ngay, thang, nam);
+
+		this.dauCach = dauCach;
+
+		this.dinhDang = dinhDang;
+
+	}
+
+	public DangNgay(int ngay, int thang, int nam){
+
+		super(ngay, thang, nam);
+
+		this.dauCach = '/';
+
+		this.dinhDang = "DMY";
+
+	}
+
+	
+
+	@Override
+
+	public String toString() {
+
+		String kq = null;
+
+		if(dinhDang == "DMY")
+
+			kq = String.format("%d %s %d %s %d", this.ngay,this.dauCach,this.thang,this.dauCach,this.nam);
+
+		if(dinhDang == "YMD")
+
+			kq = String.format("%d %s %d %s %d", this.nam,this.dauCach,this.thang,this.dauCach,this.ngay);
+
+		if(dinhDang == "MDY")
+
+			kq = String.format("%d %s %d %s %d", this.thang,this.dauCach,this.ngay,this.dauCach,this.nam);
+
+		return kq;
+
+	}
+
+	
+
+
+
+	public String getDinhDang() {
+
+		return dinhDang;
+
+	}
+
+	public void setDinhDang(String dinhDang) {
+
+		this.dinhDang = dinhDang;
+
+	}
+
+
+
+}
+
+
+
+import java.util.ArrayList;
+
+
+
+
+
+public class NhacSi {
+
+	private String ten;
+
+	private int quocTich;
+
+	private DangNgay ngaySinh;
+
+	private DangNgay ngayMat;
+
+	private String baiHat;
+
+	public NhacSi(String ten, int quocTich, DangNgay ns, DangNgay nm,String bh){
+
+		this.ten = ten;
+
+		this.quocTich = quocTich;
+
+		this.ngaySinh = ns;
+
+		this.ngayMat = nm;
+
+		this.baiHat = bh;
+
+	}
+
+
+
+	public NhacSi(String ten, int quocTich, DangNgay ns,String bh){
+
+		this.ten = ten;
+
+		this.quocTich = quocTich;
+
+		this.ngaySinh = ns;
+
+		this.ngayMat = null;
+
+		this.baiHat = bh;
+
+	}
+
+	@Override
+
+	public String toString() {
+
+		String kq = null;
+
+		if(this.quocTich == 1)
+
+		{
+
+			this.ngaySinh.setDinhDang("MDY");
+
+			kq = String.format("Ten nhac si: %s\nQuoc tich: %s\nNgay sinh: %s", this.ten, "Hoa ky", this.ngaySinh);
+
+		}
+
+		if(this.quocTich == 0)
+
+		{
+
+			this.ngaySinh.setDinhDang("DMY");
+
+			kq = String.format("Ten nhac si: %s\nQuoc tich: %s\nNgay sinh: %s", this.ten, "Viet Nam", this.ngaySinh);
+
+		}
+
+		if(this.quocTich == 3)
+
+		{
+
+			this.ngaySinh.setDinhDang("YMD");
+
+			kq = String.format("Ten nhac si: %s\nQuoc tich: %s\nNgay sinh: %s", this.ten, "Quoc tich khac", this.ngaySinh);
+
+		}
+
+		if(this.ngayMat != null)
+
+		{
+
+			if(this.quocTich == 1)
+
+				this.ngayMat.setDinhDang("MDY");
+
+			if(this.quocTich == 0)
+
+				this.ngayMat.setDinhDang("DMY");
+
+			if(this.quocTich == 3)
+
+				this.ngayMat.setDinhDang("YMD");
+
+			kq += String.format("\nNgay mat: %s",this.ngayMat);
+
+		}
+
+		kq += String.format("\nBai hat tieu bieu: %s", this.baiHat);
+
+		return kq;
+
+	}
+
+	public static void main(String[] args) {
+
+		ArrayList <NhacSi> ds = new ArrayList<NhacSi>();
+
+		DangNgay ns1 = new DangNgay(28,2,1939);
+
+		DangNgay nm1 = new DangNgay(1,4,2001);
+
+		NhacSi a = new NhacSi("Trinh Cong Son",0,ns1,nm1,"Noi vong tay lon");
+
+		
+
+		DangNgay ns2 = new DangNgay(9,10,1940);
+
+		DangNgay nm2 = new DangNgay(8,12,1980);
+
+		NhacSi b = new NhacSi("John Lennon",1,ns2,nm2,"Imagine");
+
+		
+
+		DangNgay ns3 = new DangNgay(5,10,1921);
+
+		DangNgay nm3 = new DangNgay(27,1,2013);
+
+		NhacSi c = new NhacSi("Pham Duy",0,ns3,nm3,"Tinh ca");
+
+		
+
+		DangNgay ns4 = new DangNgay(15,11,1923);
+
+		DangNgay nm4 = new DangNgay(10,7,1995);
+
+		NhacSi d = new NhacSi("Van Cao",0,ns4,nm4,"Thien thai");
+
+		
+
+		DangNgay ns5 = new DangNgay(25,3,1947);
+
+		NhacSi e = new NhacSi("Elton John",3,ns5,"Candle in the wind");
+
+		
+
+		DangNgay ns6 = new DangNgay(8,1,1935);
+
+		DangNgay nm6 = new DangNgay(16,8,1977);
+
+		NhacSi f = new NhacSi("Elvis Presley",1,ns6,nm6,"Love me tender");
+
+		
+
+		DangNgay ns7 = new DangNgay(18,6,1942);
+
+		NhacSi h = new NhacSi("Paul Mc Cartney",3,ns7,"Yesterday");
+
+		
+
+		ds.add(a);
+
+		ds.add(b);
+
+		ds.add(c);
+
+		ds.add(d);
+
+		ds.add(e);
+
+		ds.add(f);
+
+		ds.add(h);
+
+		System.out.println("================= DS nhac si tu gia den tre =================");
+
+		ds.sort((p1,p2)->-p1.ngaySinh.soSanh(p2.ngaySinh));
+
+		System.out.println(ds);
+
+		System.out.println("===================== Nhac si con song ======================");
+
+		for(NhacSi p:ds)
+
+			if(p.ngayMat == null)
+
+				System.out.println(p);
+
+		System.out.println("============== Nhac si VN theo thu tu ngay mat ==============");
+
+		ArrayList <NhacSi> ds2 = new ArrayList<NhacSi>();
+
+		for(NhacSi p:ds)
+
+			if(p.quocTich == 0)
+
+			{
+
+				ds2.add(p);
+
+				ds2.sort((p1,p2)->-p1.ngayMat.soSanh(p2.ngayMat));
+
+			}
+
+		System.out.println(ds2);
+
+		System.out.println("====== Nhac si nuoc ngoai theo thu tu nam sinh tang dan =====");
+
+		for(NhacSi p:ds)
+
+			if(p.quocTich != 0)
+
+				System.out.println(p);
+
+
+
+	}
+
+
+
+}
